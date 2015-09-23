@@ -1,0 +1,19 @@
+{
+  "name": "taller-iot",
+  "version": "0.1.0",
+  "authors": [
+    "Roberto Paredes <rdparedessalazar@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "~0.11.0",
+    "angular": "~1.4.6"
+  }
+}
