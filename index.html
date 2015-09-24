@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Taller IOT y WOT</title>
 	<link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
-	 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+	<link rel="stylesheet" type="text/css" href="styles/app.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
     <meta name="viewport" content="initial-scale=1" />
 </head>
 <body ng-controller="AppController">
@@ -12,12 +13,12 @@
 		<md-toolbar md-scroll-shrink>
 			<div class="md-toolbar-tools">Taller IOT y WOT</div>
 		</md-toolbar>
-		<md-content>
+		<md-content class="container">
 			<section layout="column">
-				<h2>Subtitle</h2>
+				<h2>Panel de control</h2>
 				<div ng-repeat="n in getTimes(4) track by $index">
-					<md-button class="md-fab" aria-label="Toggle switch">
-						<md-icon md-svg-src=""></md-icon>
+					<md-button ng-model="active" ng-class="{'md-primary': }" class="md-fab" aria-label="Toggle switch">
+						<ng-md-icon icon="close" style="fill" size="36"></md-icon>
 					</md-button>
 				</div>
 			</section>
@@ -28,6 +29,7 @@
 	<script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
 	<script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
 	<script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js"></script> 
 	<script type="text/javascript" src="scripts/app.js"></script>
 </body>
 </html>
