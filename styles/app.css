@@ -1,8 +1,23 @@
-.container {
-	margin: 0 1em;
-}
-
 .md-fab {
 	line-height: 78px !important;
-	background-color: transparent !important;
+	background-color: transparent;
+}
+
+.appTabs md-content {
+	background-color: transparent !important; }
+.appTabs md-content md-tabs {
+	background: #f6f6f6;
+	border: 1px solid #e1e1e1; 
+}
+.appTabs md-content md-tabs md-tabs-wrapper {
+	background: white; 
+}
+.appTabs md-content h1:first-child {
+	margin-top: 0; 
+}
+.appTabs .md-fab {
+	background-color: #fff !important;
+}
+.appTabs .md-switch-on {
+	background-color: #FEF200 !important;
 }
