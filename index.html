@@ -11,7 +11,12 @@
 	<body ng-controller="AppController" id="mainContainer">
 		<div class="appTabs" layout="column" flex layout-fill>
 			<md-toolbar md-scroll-shrink>
-				<div class="md-toolbar-tools">Taller IOT y WOT</div>
+				<div class="md-toolbar-tools">
+					<md-button class="md-icon-button">
+						<!-- <span ng-md-icon icon="done" aria-label="logo"></span> -->
+					</md-button>
+					Taller IOT y WOT
+				</div>
 			</md-toolbar>
 			<md-content class="md-padding">
 				<md-tabs md-dynamic-height md-border-bottom>
@@ -19,20 +24,16 @@
 						<md-content layout="column" class="md-padding">
 							<h1 class="md-display-2">Control de LEDs</h1>
 							<div ng-repeat="switch in switches track by $index">
-								<md-button ng-click="itemClicked($index)" ng-class="{'md-switch-on': switch['toggled'] == 1}" class="md-fab" aria-label="Toggle switch">
+								<md-button ng-click="setToggles($index)" ng-class="{'md-switch-on': switch['toggled'] == 1}" class="md-fab" aria-label="Toggle switch">
 									<span ng-md-icon icon={{switches[$index]['icon']}} style="fill" size="36"></span>
 								</md-button>
 							</div>
 						</md-content>
 					</md-tab>
-					<md-tab label="Nivel del Agua">
-						<md-content class="md-padding">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					<md-tab label="Nivel del Agua" ng-click="startGetWaterLevelTimer()">
+						<md-content layout="column" class="md-padding">
+							<h1 class="md-display-2">Nivel del Agua</h1>
+							<span class="md-display-1">{{distance}}</span>
 						</md-content>
 					</md-tab>
 					<md-tab label="Configuración">

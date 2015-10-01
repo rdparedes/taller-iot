@@ -1,8 +1,3 @@
-.md-fab {
-	line-height: 78px !important;
-	background-color: transparent;
-}
-
 .appTabs md-content {
 	background-color: transparent !important; }
 .appTabs md-content md-tabs {
@@ -14,6 +9,9 @@
 }
 .appTabs md-content h1:first-child {
 	margin-top: 0; 
+}
+.md-fab {
+	line-height: 78px !important;
 }
 .appTabs .md-fab {
 	background-color: #fff !important;
