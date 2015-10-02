@@ -19,3 +19,10 @@
 .appTabs .md-switch-on {
 	background-color: #FEF200 !important;
 }
+.png-icon {
+	margin: 0 auto auto;
+	padding: 0;
+	display: inline-block;
+	background-repeat: no-repeat no-repeat;
+	pointer-events: none;
+}

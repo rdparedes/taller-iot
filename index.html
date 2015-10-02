@@ -12,33 +12,34 @@
 		<div class="appTabs" layout="column" flex layout-fill>
 			<md-toolbar md-scroll-shrink>
 				<div class="md-toolbar-tools">
-					<md-button class="md-icon-button">
-						<!-- <span ng-md-icon icon="done" aria-label="logo"></span> -->
-					</md-button>
-					Taller IOT y WOT
+					<span>Taller IOT y WOT</span>
+					<span flex></span>
+					<a href="https://www.thoughtworks.com/es/" target="_blank"> 
+						<img class="png-icon" src="content/logo.png" style="width: 180px; height=70px;">
+					</a>
 				</div>
 			</md-toolbar>
 			<md-content class="md-padding">
 				<md-tabs md-dynamic-height md-border-bottom>
 					<md-tab label="Control de LEDs">
 						<md-content layout="column" class="md-padding">
-							<h1 class="md-display-2">Control de LEDs</h1>
-							<div ng-repeat="switch in switches track by $index">
+							<h1 class="md-display-1">Control de LEDs</h1>
+							<div ng-repeat="switch in ledSwitches track by $index">
 								<md-button ng-click="setToggles($index)" ng-class="{'md-switch-on': switch['toggled'] == 1}" class="md-fab" aria-label="Toggle switch">
-									<span ng-md-icon icon={{switches[$index]['icon']}} style="fill" size="36"></span>
+									<span ng-md-icon icon={{ledSwitches[$index]['icon']}} style="fill" size="36"></span>
 								</md-button>
 							</div>
 						</md-content>
 					</md-tab>
-					<md-tab label="Nivel del Agua" ng-click="startGetWaterLevelTimer()">
+					<md-tab label="Nivel del Agua" ng-click="startWaterLevelTimer()">
 						<md-content layout="column" class="md-padding">
-							<h1 class="md-display-2">Nivel del Agua</h1>
-							<span class="md-display-1">{{distance}}</span>
+							<h1 class="md-display-1">Nivel del Agua</h1>
+							<span class="md-display-1">{{waterDistance}}</span>
 						</md-content>
 					</md-tab>
 					<md-tab label="Configuración">
 						<md-content layout="column" class="md-padding">
-							<h1 class="md-display-2">Configuración</h1>
+							<h1 class="md-display-1">Configuración</h1>
 							<div layout="row" layout-sm="column">
 								<md-input-container flex>
 									<label>IP</label>
@@ -56,6 +57,7 @@
 		</div>
 		<!-- Scripts -->
 		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular-touch/angular-touch.min.js"></script>
 		<script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
 		<script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
 		<script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
