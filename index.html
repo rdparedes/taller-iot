@@ -5,7 +5,7 @@
 		<title>Taller IOT y WOT</title>
 		<link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
 		<link rel="stylesheet" type="text/css" href="styles/app.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+		<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic"> -->
 		<meta name="viewport" content="initial-scale=1" />
 	</head>
 	<body ng-controller="AppController" id="mainContainer">
@@ -19,21 +19,37 @@
 					</a>
 				</div>
 			</md-toolbar>
-			<md-content class="md-padding">
+			<md-content class="md-padding" layout="column">
 				<md-tabs md-dynamic-height md-border-bottom>
 					<md-tab label="Control de LEDs">
 						<md-content layout="column" class="md-padding">
-							<h1 class="md-display-1">Control de LEDs</h1>
+							<span layout="row" layout-align="left center" layout-wrap>
+								<h1 class="md-display-1">Control de LEDs</h1>
+								<span style="padding-left: 1em;">
+									<span ng-repeat="switch in ledSwitches track by $index">
+										<md-button class="md-raised" ng-click="setupLed($index)">
+											Inicializar LED {{($index + 1)}}
+										</md-button>
+									</span>
+								</span>
+							</span>
 							<div ng-repeat="switch in ledSwitches track by $index">
-								<md-button ng-click="setToggles($index)" ng-class="{'md-switch-on': switch['toggled'] == 1}" class="md-fab" aria-label="Toggle switch">
+								<md-button ng-click="setToggles($index)" ng-class="{'md-switch-on': switch['toggled'] === 0}" class="md-fab" aria-label="Toggle switch">
 									<span ng-md-icon icon={{ledSwitches[$index]['icon']}} style="fill" size="36"></span>
 								</md-button>
 							</div>
 						</md-content>
 					</md-tab>
-					<md-tab label="Nivel del Agua" ng-click="startWaterLevelTimer()">
+					<md-tab label="Nivel del Agua">
 						<md-content layout="column" class="md-padding">
-							<h1 class="md-display-1">Nivel del Agua</h1>
+							<span layout="row" layout-align="left center" layout-wrap>
+								<h1 class="md-display-1">Nivel del Agua</h1>
+								<span style="padding-left: 1em;">
+									<md-button class="md-raised" ng-click="getWaterLevel()">
+										Obtener
+									</md-button>
+								</span>
+							</span>
 							<span class="md-display-1">{{waterDistance}}</span>
 						</md-content>
 					</md-tab>
